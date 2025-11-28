@@ -52,11 +52,11 @@ function displayFiles(items) {
         const icon = item.is_directory ? '📁' : getFileIcon(item.extension);
         const size = item.is_directory ? '' : formatFileSize(item.size);
 
-        // 使用 JSON 编码确保路径正确转义
-        const escapedPath = JSON.stringify(item.path);
+        // 为HTML属性准备安全的路径字符串
+        const pathForHtml = item.path.replace(/\\/g, '/').replace(/'/g, "\\'").replace(/"/g, '\\"');
 
         html += `
-            <div class="file-item" data-path=${escapedPath} onclick="selectItem(this, ${escapedPath})" ondblclick="openItem(${escapedPath})" oncontextmenu="showContextMenu(event, ${escapedPath})">
+            <div class="file-item" data-path="${pathForHtml}" onclick='selectItem(this, "${pathForHtml}")' ondblclick='openItem("${pathForHtml}")' oncontextmenu='showContextMenu(event, "${pathForHtml}")'>
                 <div class="file-icon">${icon}</div>
                 <div class="file-name">${item.name}</div>
                 <div class="file-size">${size}</div>
@@ -334,11 +334,11 @@ function displaySearchResults(results, pattern) {
 
     results.forEach(item => {
         const icon = getFileIcon(item.path.split('.').pop());
-        // 使用 JSON 编码确保路径正确转义
-        const escapedPath = JSON.stringify(item.path);
+        // 为HTML属性准备安全的路径字符串
+        const pathForHtml = item.path.replace(/\\/g, '/').replace(/'/g, "\\'").replace(/"/g, '\\"');
 
         html += `
-            <div class="file-item" data-path=${escapedPath} onclick="selectItem(this, ${escapedPath})" ondblclick="editItem(${escapedPath})">
+            <div class="file-item" data-path="${pathForHtml}" onclick='selectItem(this, "${pathForHtml}")' ondblclick='editItem("${pathForHtml}")'>
                 <div class="file-icon">${icon}</div>
                 <div class="file-name">${item.name}</div>
                 <div class="file-size">${formatFileSize(item.size)}</div>
