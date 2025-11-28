@@ -796,7 +796,7 @@ class FileOperationsExample:
         let currentEditingFile = '';
 
         // 页面加载时初始化
-        window.onload = function() {
+        window.addEventListener('pywebviewready', function() {
             loadDirectory();
 
             // 点击空白处关闭右键菜单
@@ -808,7 +808,7 @@ class FileOperationsExample:
             document.addEventListener('contextmenu', function(e) {
                 e.preventDefault();
             });
-        };
+        });
 
         // 加载目录
         async function loadDirectory(path = null) {

@@ -663,7 +663,7 @@ class ApiServerExample:
         const API_BASE = 'http://localhost:{self.api_port}/api';
 
         // 页面加载时初始化
-        window.onload = function() {{
+        window.addEventListener('pywebviewready', function() {{
             checkServerStatus();
             loadStatistics();
             loadUsers();
@@ -673,7 +673,7 @@ class ApiServerExample:
             // 定期更新状态
             setInterval(checkServerStatus, 5000);
             setInterval(loadStatistics, 10000);
-        }};
+        }});
 
         // 检查服务器状态
         async function checkServerStatus() {{
