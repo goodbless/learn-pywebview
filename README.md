@@ -16,12 +16,46 @@ PyWebView 是一个轻量级的跨平台库，允许你使用 HTML、CSS 和 Jav
 
 ## 环境要求
 
-- Python 3.7+
+- Python 3.10+（推荐 3.10.2）
 - 操作系统：Windows、macOS 或 Linux
+- 内存：至少 512MB 可用内存
+- 磁盘：100MB 可用空间
 
 ## 安装
 
+### 快速开始
 ```bash
+# 1. 克隆项目
+git clone https://github.com/goodbless/learn-pywebview.git
+cd learn-pywebview
+
+# 2. 创建虚拟环境
+python -m venv .venv
+
+# 3. 激活虚拟环境（Windows）
+.venv\Scripts\activate
+
+# 4. 安装依赖
+pip install -r requirements.txt
+
+# 5. 运行文件管理器示例
+python file_operations_example.py
+```
+
+### 依赖安装
+查看 [INSTALL.md](INSTALL.md) 获取详细的安装说明。
+
+## 依赖包
+
+### 核心依赖
+- `pywebview==6.1.0` - 桌面应用框架
+
+### 打包依赖
+- `pyinstaller>=6.0.0` - 打包为可执行文件
+
+完整依赖列表请查看 [requirements.txt](requirements.txt)。
+
+## 使用示例
 pip install pywebview
 ```
 

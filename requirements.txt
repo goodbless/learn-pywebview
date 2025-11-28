@@ -1,0 +1,24 @@
+# PyWebView 文件管理器依赖包
+# 主要依赖
+pywebview==6.1.0
+
+# 打包工具（可选）
+pyinstaller>=6.0.0
+
+# 系统依赖（通常已包含在 Python 标准库中）
+# os, sys, json, threading, datetime, mimetypes, shutil, pathlib
+
+# 开发和调试工具（可选）
+# pytest==8.0.0        # 单元测试
+# flake8==7.0.0        # 代码风格检查
+# black==24.0.0        # 代码格式化
+
+# Windows 特定依赖（可选，增强功能）
+# pywin32==306          # Windows API 访问
+# psutil==5.9.0         # 系统信息获取
+
+# 注意：
+# - pywebview 是核心依赖，提供桌面应用框架
+# - pyinstaller 仅在打包时需要
+# - 其他依赖大部分已在 Python 标准库中
+# - 建议使用 Python 3.10 或更高版本
